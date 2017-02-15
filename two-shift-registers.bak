@@ -1,0 +1,661 @@
+EESchema Schematic File Version 2
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:one-shift-register-cache
+EELAYER 25 0
+EELAYER END
+$Descr USLetter 11000 8500
+encoding utf-8
+Sheet 1 1
+Title "Arduino UNO to Shift Register to 8 LEDs"
+Date "2017-02-14"
+Rev "1"
+Comp "marignallyclever.com"
+Comment1 "Dan Royer (dan@marginallyclever.com)"
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L CONN_8 P1
+U 1 1 5517C2C1
+P 4325 5150
+F 0 "P1" V 4275 5150 60  0000 C CNN
+F 1 "Power" V 4375 5150 60  0000 C CNN
+F 2 "Socket_Arduino_Uno:Socket_Strip_Arduino_1x08" H 4325 5150 60  0001 C CNN
+F 3 "" H 4325 5150 60  0000 C CNN
+	1    4325 5150
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_6 P2
+U 1 1 5517C323
+P 4325 5950
+F 0 "P2" V 4275 5950 60  0000 C CNN
+F 1 "Analog" V 4375 5950 60  0000 C CNN
+F 2 "Socket_Arduino_Uno:Socket_Strip_Arduino_1x06" H 4325 5950 60  0001 C CNN
+F 3 "" H 4325 5950 60  0000 C CNN
+	1    4325 5950
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_8 P4
+U 1 1 5517C366
+P 4650 5850
+F 0 "P4" V 4600 5850 60  0000 C CNN
+F 1 "Digital" V 4700 5850 60  0000 C CNN
+F 2 "Socket_Arduino_Uno:Socket_Strip_Arduino_1x08" H 4650 5850 60  0001 C CNN
+F 3 "" H 4650 5850 60  0000 C CNN
+	1    4650 5850
+	-1   0    0    -1  
+$EndComp
+$Comp
+L CONN_10 P3
+U 1 1 5517C46C
+P 4650 4850
+F 0 "P3" V 4600 4850 60  0000 C CNN
+F 1 "Digital" V 4700 4850 60  0000 C CNN
+F 2 "Socket_Arduino_Uno:Socket_Strip_Arduino_1x10" H 4650 4850 60  0001 C CNN
+F 3 "" H 4650 4850 60  0000 C CNN
+	1    4650 4850
+	-1   0    0    -1  
+$EndComp
+Text Label 3225 5000 0    60   ~ 0
+Reset
+Text Label 3525 4625 1    60   ~ 0
+Vin
+Text Label 3900 4625 1    60   ~ 0
+IOREF
+Text Label 3225 5700 0    60   ~ 0
+A0
+Text Label 3225 5800 0    60   ~ 0
+A1
+Text Label 3225 5900 0    60   ~ 0
+A2
+Text Label 3225 6000 0    60   ~ 0
+A3
+Text Label 3225 6100 0    60   ~ 0
+A4(SDA)
+Text Label 3225 6200 0    60   ~ 0
+A5(SCL)
+Text Label 5150 6200 0    60   ~ 0
+0(Rx)
+Text Label 5150 6000 0    60   ~ 0
+2
+Text Label 5150 6100 0    60   ~ 0
+1(Tx)
+Text Label 5150 5900 0    60   ~ 0
+3(**)
+Text Label 5150 5800 0    60   ~ 0
+4
+Text Label 5150 5700 0    60   ~ 0
+5(**)
+Text Label 5150 5600 0    60   ~ 0
+6(**)
+Text Label 5150 5500 0    60   ~ 0
+7
+Text Label 5150 5300 0    60   ~ 0
+8
+Text Label 5150 5200 0    60   ~ 0
+9(**)
+Text Label 5150 5100 0    60   ~ 0
+10(**/SS)
+Text Label 5150 5000 0    60   ~ 0
+11(**/MOSI)
+Text Label 5150 4900 0    60   ~ 0
+12(MISO)
+Text Label 5150 4800 0    60   ~ 0
+13(SCK)
+Text Label 5225 4600 0    60   ~ 0
+AREF
+$Comp
+L GND #PWR01
+U 1 1 5517CC27
+P 5075 6375
+F 0 "#PWR01" H 5075 6375 30  0001 C CNN
+F 1 "GND" H 5075 6305 30  0001 C CNN
+F 2 "" H 5075 6375 60  0000 C CNN
+F 3 "" H 5075 6375 60  0000 C CNN
+	1    5075 6375
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR02
+U 1 1 5517CC7B
+P 3900 6375
+F 0 "#PWR02" H 3900 6375 30  0001 C CNN
+F 1 "GND" H 3900 6305 30  0001 C CNN
+F 2 "" H 3900 6375 60  0000 C CNN
+F 3 "" H 3900 6375 60  0000 C CNN
+	1    3900 6375
+	1    0    0    -1  
+$EndComp
+$Comp
+L +5V #PWR03
+U 1 1 5517CCC2
+P 3650 4625
+F 0 "#PWR03" H 3650 4715 20  0001 C CNN
+F 1 "+5V" H 3650 4715 30  0000 C CNN
+F 2 "" H 3650 4625 60  0000 C CNN
+F 3 "" H 3650 4625 60  0000 C CNN
+	1    3650 4625
+	1    0    0    -1  
+$EndComp
+$Comp
+L +3.3V #PWR04
+U 1 1 5517CCDA
+P 3775 4625
+F 0 "#PWR04" H 3775 4585 30  0001 C CNN
+F 1 "+3.3V" H 3775 4735 30  0000 C CNN
+F 2 "" H 3775 4625 60  0000 C CNN
+F 3 "" H 3775 4625 60  0000 C CNN
+	1    3775 4625
+	1    0    0    -1  
+$EndComp
+NoConn ~ 3975 4800
+Text Label 5150 4500 0    60   ~ 0
+A4_2(SDA)
+Text Label 5150 4400 0    60   ~ 0
+A5_2(SCL)
+$Comp
+L CONN_1 P5
+U 1 1 551BBC06
+P 5475 3925
+F 0 "P5" H 5555 3925 40  0000 L CNN
+F 1 "CONN_1" H 5475 3980 30  0001 C CNN
+F 2 "Socket_Arduino_Uno:Arduino_1pin" H 5475 3925 60  0001 C CNN
+F 3 "" H 5475 3925 60  0000 C CNN
+	1    5475 3925
+	0    -1   -1   0   
+$EndComp
+$Comp
+L CONN_1 P6
+U 1 1 551BBD10
+P 5550 3925
+F 0 "P6" H 5630 3925 40  0000 L CNN
+F 1 "CONN_1" H 5550 3980 30  0001 C CNN
+F 2 "Socket_Arduino_Uno:Arduino_1pin" H 5550 3925 60  0001 C CNN
+F 3 "" H 5550 3925 60  0000 C CNN
+	1    5550 3925
+	0    -1   -1   0   
+$EndComp
+$Comp
+L CONN_1 P7
+U 1 1 551BBD30
+P 5625 3925
+F 0 "P7" H 5705 3925 40  0000 L CNN
+F 1 "CONN_1" H 5625 3980 30  0001 C CNN
+F 2 "Socket_Arduino_Uno:Arduino_1pin" H 5625 3925 60  0001 C CNN
+F 3 "" H 5625 3925 60  0000 C CNN
+	1    5625 3925
+	0    -1   -1   0   
+$EndComp
+$Comp
+L CONN_1 P8
+U 1 1 551BBD52
+P 5700 3925
+F 0 "P8" H 5780 3925 40  0000 L CNN
+F 1 "CONN_1" H 5700 3980 30  0001 C CNN
+F 2 "Socket_Arduino_Uno:Arduino_1pin" H 5700 3925 60  0001 C CNN
+F 3 "" H 5700 3925 60  0000 C CNN
+	1    5700 3925
+	0    -1   -1   0   
+$EndComp
+Text Notes 5475 4200 0    60   ~ 0
+Holes
+NoConn ~ 5475 4075
+NoConn ~ 5550 4075
+NoConn ~ 5625 4075
+NoConn ~ 5700 4075
+Wire Wire Line
+	3200 5700 3975 5700
+Wire Wire Line
+	3200 5800 3975 5800
+Wire Wire Line
+	3200 5900 3975 5900
+Wire Wire Line
+	3200 6000 3975 6000
+Wire Wire Line
+	3200 6100 3975 6100
+Wire Wire Line
+	3200 6200 3975 6200
+Wire Wire Line
+	5000 5300 5725 5300
+Wire Wire Line
+	5000 5200 5725 5200
+Wire Wire Line
+	5000 5100 5725 5100
+Wire Wire Line
+	5000 5000 5725 5000
+Wire Wire Line
+	5000 4900 5725 4900
+Wire Wire Line
+	5000 4800 5725 4800
+Wire Wire Line
+	5000 4600 5725 4600
+Wire Wire Line
+	5000 4500 5725 4500
+Wire Wire Line
+	5000 4400 5725 4400
+Wire Wire Line
+	3775 5100 3975 5100
+Wire Wire Line
+	3650 5200 3975 5200
+Wire Wire Line
+	3900 5300 3900 6375
+Wire Wire Line
+	3200 5000 3975 5000
+Wire Wire Line
+	5075 4700 5075 6375
+Wire Wire Line
+	5075 4700 5000 4700
+Wire Wire Line
+	5000 5600 6150 5600
+Wire Wire Line
+	5000 5500 5725 5500
+Wire Wire Line
+	5000 6200 5725 6200
+Wire Wire Line
+	5000 6100 5725 6100
+Wire Wire Line
+	3775 3975 3775 5100
+Wire Wire Line
+	3900 4625 3900 4900
+Wire Wire Line
+	3900 4900 3975 4900
+Wire Wire Line
+	3650 3675 3650 5200
+Wire Wire Line
+	3525 4625 3525 5500
+Wire Wire Line
+	3525 5500 3975 5500
+Wire Wire Line
+	3900 5300 3975 5300
+Wire Wire Line
+	3975 5400 3900 5400
+Connection ~ 3900 5400
+NoConn ~ 5725 4400
+NoConn ~ 5725 4500
+NoConn ~ 5725 4600
+NoConn ~ 5725 4800
+NoConn ~ 5725 4900
+NoConn ~ 5725 5000
+NoConn ~ 5725 5100
+NoConn ~ 5725 5200
+NoConn ~ 5725 5300
+NoConn ~ 3200 5700
+NoConn ~ 3200 5800
+NoConn ~ 3200 5900
+NoConn ~ 3200 6000
+NoConn ~ 3200 6100
+NoConn ~ 3200 6200
+NoConn ~ 3200 5000
+NoConn ~ 3525 4625
+NoConn ~ 3900 4625
+$Comp
+L 74HC595 U1
+U 1 1 58A36180
+P 7650 5250
+F 0 "U1" H 7800 5850 50  0000 C CNN
+F 1 "74HC595" H 7650 4650 50  0000 C CNN
+F 2 "Housings_DIP:DIP-16_W7.62mm" H 7650 5250 50  0001 C CNN
+F 3 "" H 7650 5250 50  0000 C CNN
+	1    7650 5250
+	1    0    0    -1  
+$EndComp
+NoConn ~ 8350 5700
+Wire Wire Line
+	7350 6375 7350 5800
+Wire Wire Line
+	3900 6375 10000 6375
+Wire Wire Line
+	7350 4700 7350 3675
+Wire Wire Line
+	7350 3675 3650 3675
+Connection ~ 3650 4625
+Connection ~ 3650 3675
+$Comp
+L PWR_FLAG #FLG05
+U 1 1 58A36834
+P 3650 3675
+F 0 "#FLG05" H 3650 3770 50  0001 C CNN
+F 1 "PWR_FLAG" H 3650 3855 50  0000 C CNN
+F 2 "" H 3650 3675 50  0000 C CNN
+F 3 "" H 3650 3675 50  0000 C CNN
+	1    3650 3675
+	1    0    0    -1  
+$EndComp
+Connection ~ 5075 6375
+NoConn ~ 5725 5500
+NoConn ~ 5725 6100
+NoConn ~ 5725 6200
+Wire Wire Line
+	5000 6000 6750 6000
+Wire Wire Line
+	6750 6000 6750 5400
+Wire Wire Line
+	6750 5400 6950 5400
+Wire Wire Line
+	6950 5300 6600 5300
+Wire Wire Line
+	6600 5300 6600 5900
+Wire Wire Line
+	6600 5900 5000 5900
+Wire Wire Line
+	5000 5800 6450 5800
+Wire Wire Line
+	6450 5800 6450 5100
+Wire Wire Line
+	6450 5100 6950 5100
+Wire Wire Line
+	6950 5000 6300 5000
+Wire Wire Line
+	6300 5000 6300 5700
+Wire Wire Line
+	6300 5700 5000 5700
+Wire Wire Line
+	6150 5600 6150 4800
+Wire Wire Line
+	6150 4800 6950 4800
+$Comp
+L LED D1
+U 1 1 58A37201
+P 9325 4125
+F 0 "D1" H 9325 4225 50  0000 C CNN
+F 1 "LED" H 9325 4025 50  0000 C CNN
+F 2 "LEDs:LED_D4.0mm" H 9325 4125 50  0001 C CNN
+F 3 "" H 9325 4125 50  0000 C CNN
+	1    9325 4125
+	-1   0    0    1   
+$EndComp
+$Comp
+L LED D2
+U 1 1 58A37306
+P 9325 4400
+F 0 "D2" H 9325 4500 50  0000 C CNN
+F 1 "LED" H 9325 4300 50  0000 C CNN
+F 2 "LEDs:LED_D4.0mm" H 9325 4400 50  0001 C CNN
+F 3 "" H 9325 4400 50  0000 C CNN
+	1    9325 4400
+	-1   0    0    1   
+$EndComp
+$Comp
+L LED D3
+U 1 1 58A37351
+P 9325 4700
+F 0 "D3" H 9325 4800 50  0000 C CNN
+F 1 "LED" H 9325 4600 50  0000 C CNN
+F 2 "LEDs:LED_D4.0mm" H 9325 4700 50  0001 C CNN
+F 3 "" H 9325 4700 50  0000 C CNN
+	1    9325 4700
+	-1   0    0    1   
+$EndComp
+$Comp
+L LED D4
+U 1 1 58A3739E
+P 9325 5000
+F 0 "D4" H 9325 5100 50  0000 C CNN
+F 1 "LED" H 9325 4900 50  0000 C CNN
+F 2 "LEDs:LED_D4.0mm" H 9325 5000 50  0001 C CNN
+F 3 "" H 9325 5000 50  0000 C CNN
+	1    9325 5000
+	-1   0    0    1   
+$EndComp
+$Comp
+L R R1
+U 1 1 58A375C6
+P 9675 4125
+F 0 "R1" V 9755 4125 50  0000 C CNN
+F 1 "220" V 9675 4125 50  0000 C CNN
+F 2 "Resistors_ThroughHole:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 9605 4125 50  0001 C CNN
+F 3 "" H 9675 4125 50  0000 C CNN
+	1    9675 4125
+	0    1    1    0   
+$EndComp
+$Comp
+L LED D5
+U 1 1 58A3766D
+P 9325 5300
+F 0 "D5" H 9325 5400 50  0000 C CNN
+F 1 "LED" H 9325 5200 50  0000 C CNN
+F 2 "LEDs:LED_D4.0mm" H 9325 5300 50  0001 C CNN
+F 3 "" H 9325 5300 50  0000 C CNN
+	1    9325 5300
+	-1   0    0    1   
+$EndComp
+$Comp
+L LED D6
+U 1 1 58A376E2
+P 9325 5600
+F 0 "D6" H 9325 5700 50  0000 C CNN
+F 1 "LED" H 9325 5500 50  0000 C CNN
+F 2 "LEDs:LED_D4.0mm" H 9325 5600 50  0001 C CNN
+F 3 "" H 9325 5600 50  0000 C CNN
+	1    9325 5600
+	-1   0    0    1   
+$EndComp
+$Comp
+L LED D7
+U 1 1 58A378D7
+P 9325 5900
+F 0 "D7" H 9325 6000 50  0000 C CNN
+F 1 "LED" H 9325 5800 50  0000 C CNN
+F 2 "LEDs:LED_D4.0mm" H 9325 5900 50  0001 C CNN
+F 3 "" H 9325 5900 50  0000 C CNN
+	1    9325 5900
+	-1   0    0    1   
+$EndComp
+$Comp
+L LED D8
+U 1 1 58A37914
+P 9325 6225
+F 0 "D8" H 9325 6325 50  0000 C CNN
+F 1 "LED" H 9325 6125 50  0000 C CNN
+F 2 "LEDs:LED_D4.0mm" H 9325 6225 50  0001 C CNN
+F 3 "" H 9325 6225 50  0000 C CNN
+	1    9325 6225
+	-1   0    0    1   
+$EndComp
+$Comp
+L R R2
+U 1 1 58A37A33
+P 9675 4400
+F 0 "R2" V 9755 4400 50  0000 C CNN
+F 1 "220" V 9675 4400 50  0000 C CNN
+F 2 "Resistors_ThroughHole:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 9605 4400 50  0001 C CNN
+F 3 "" H 9675 4400 50  0000 C CNN
+	1    9675 4400
+	0    1    1    0   
+$EndComp
+$Comp
+L R R3
+U 1 1 58A37ACE
+P 9675 4700
+F 0 "R3" V 9755 4700 50  0000 C CNN
+F 1 "220" V 9675 4700 50  0000 C CNN
+F 2 "Resistors_ThroughHole:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 9605 4700 50  0001 C CNN
+F 3 "" H 9675 4700 50  0000 C CNN
+	1    9675 4700
+	0    1    1    0   
+$EndComp
+$Comp
+L R R4
+U 1 1 58A37B3D
+P 9675 5000
+F 0 "R4" V 9755 5000 50  0000 C CNN
+F 1 "220" V 9675 5000 50  0000 C CNN
+F 2 "Resistors_ThroughHole:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 9605 5000 50  0001 C CNN
+F 3 "" H 9675 5000 50  0000 C CNN
+	1    9675 5000
+	0    1    1    0   
+$EndComp
+$Comp
+L R R5
+U 1 1 58A37C06
+P 9675 5300
+F 0 "R5" V 9755 5300 50  0000 C CNN
+F 1 "220" V 9675 5300 50  0000 C CNN
+F 2 "Resistors_ThroughHole:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 9605 5300 50  0001 C CNN
+F 3 "" H 9675 5300 50  0000 C CNN
+	1    9675 5300
+	0    1    1    0   
+$EndComp
+$Comp
+L R R6
+U 1 1 58A37CA7
+P 9675 5600
+F 0 "R6" V 9755 5600 50  0000 C CNN
+F 1 "220" V 9675 5600 50  0000 C CNN
+F 2 "Resistors_ThroughHole:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 9605 5600 50  0001 C CNN
+F 3 "" H 9675 5600 50  0000 C CNN
+	1    9675 5600
+	0    1    1    0   
+$EndComp
+$Comp
+L R R7
+U 1 1 58A37D4A
+P 9675 5900
+F 0 "R7" V 9755 5900 50  0000 C CNN
+F 1 "220" V 9675 5900 50  0000 C CNN
+F 2 "Resistors_ThroughHole:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 9605 5900 50  0001 C CNN
+F 3 "" H 9675 5900 50  0000 C CNN
+	1    9675 5900
+	0    1    1    0   
+$EndComp
+$Comp
+L R R8
+U 1 1 58A37DCD
+P 9675 6225
+F 0 "R8" V 9755 6225 50  0000 C CNN
+F 1 "220" V 9675 6225 50  0000 C CNN
+F 2 "Resistors_ThroughHole:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 9605 6225 50  0001 C CNN
+F 3 "" H 9675 6225 50  0000 C CNN
+	1    9675 6225
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	9125 4125 8425 4125
+Wire Wire Line
+	8425 4125 8425 4800
+Wire Wire Line
+	8350 4900 8525 4900
+Wire Wire Line
+	8525 4900 8525 4400
+Wire Wire Line
+	8525 4400 9125 4400
+Wire Wire Line
+	9125 4700 8625 4700
+Wire Wire Line
+	8625 4700 8625 5000
+Wire Wire Line
+	8625 5000 8350 5000
+Wire Wire Line
+	8350 5100 8825 5100
+Wire Wire Line
+	8825 5100 8825 5000
+Wire Wire Line
+	8825 5000 9125 5000
+Wire Wire Line
+	9125 5300 8825 5300
+Wire Wire Line
+	8825 5300 8825 5200
+Wire Wire Line
+	8825 5200 8350 5200
+Wire Wire Line
+	8350 5300 8625 5300
+Wire Wire Line
+	8625 5300 8625 5600
+Wire Wire Line
+	8625 5600 9125 5600
+Wire Wire Line
+	8350 5400 8525 5400
+Wire Wire Line
+	8525 5400 8525 5900
+Wire Wire Line
+	8525 5900 9125 5900
+Wire Wire Line
+	8425 4800 8350 4800
+Wire Wire Line
+	8350 5500 8425 5500
+Wire Wire Line
+	8425 5500 8425 6225
+Wire Wire Line
+	8425 6225 9125 6225
+Wire Wire Line
+	9825 4125 10000 4125
+Wire Wire Line
+	10000 4125 10000 6375
+Wire Wire Line
+	10000 4400 9825 4400
+Wire Wire Line
+	10000 4700 9825 4700
+Connection ~ 10000 4400
+Wire Wire Line
+	10000 5000 9825 5000
+Connection ~ 10000 4700
+Wire Wire Line
+	10000 5300 9825 5300
+Connection ~ 10000 5000
+Wire Wire Line
+	10000 5600 9825 5600
+Connection ~ 10000 5300
+Wire Wire Line
+	10000 5900 9825 5900
+Connection ~ 10000 5600
+Wire Wire Line
+	10000 6225 9825 6225
+Connection ~ 10000 5900
+Connection ~ 7350 6375
+Connection ~ 10000 6225
+Connection ~ 3775 4625
+$Comp
+L PWR_FLAG #FLG06
+U 1 1 58A3986E
+P 3775 3975
+F 0 "#FLG06" H 3775 4070 50  0001 C CNN
+F 1 "PWR_FLAG" H 3775 4155 50  0000 C CNN
+F 2 "" H 3775 3975 50  0000 C CNN
+F 3 "" H 3775 3975 50  0000 C CNN
+	1    3775 3975
+	1    0    0    -1  
+$EndComp
+$Comp
+L PWR_FLAG #FLG07
+U 1 1 58A398B4
+P 6225 6375
+F 0 "#FLG07" H 6225 6470 50  0001 C CNN
+F 1 "PWR_FLAG" H 6225 6555 50  0000 C CNN
+F 2 "" H 6225 6375 50  0000 C CNN
+F 3 "" H 6225 6375 50  0000 C CNN
+	1    6225 6375
+	1    0    0    -1  
+$EndComp
+Connection ~ 6225 6375
+$EndSCHEMATC
